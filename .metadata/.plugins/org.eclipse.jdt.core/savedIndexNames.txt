@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+D:\LearnANDR\.metadata\.plugins\org.eclipse.jdt.core
+1284074322.index
+1359623761.index
+1592191499.index
+610829556.index
