@@ -4,5 +4,10 @@
     <string name="app_name">FragTest</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	<string-array name="cats">
+    <item>Просто кот</item>
+    <item>Рыжик - рыжий кот</item>
+    <item>Барсик болеет за Барселону</item>
+    <item>Мурзик выписывает Мурзилку</item>
+</string-array>
 </resources>
