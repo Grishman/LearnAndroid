@@ -2,6 +2,7 @@ package com.sm.fragtest;
 
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,24 +10,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnSelectedButtonListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Button doURL = (Button) findViewById(R.id.doURL);
-		doURL.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				String test = new String("url to display");
-				// Start the DisplayActivity
-				//jaba.loadUrl("file:///android_asset/webcontent/Anaconda.jpg");
-				// startActivity(new Intent(getApplicationContext(), cls)));
-
-			}
-		});
+		
 	}
 	
 
@@ -47,5 +37,21 @@ public class MainActivity extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+
+	@Override
+	public void onButtonSelected(int buttonIndex) {
+		// TODO Auto-generated method stub
+		// подключаем FragmentManager
+		FragmentManager fragmentManager = getFragmentManager();
+
+		// Получаем ссылку на второй фрагмент по ID
+		ResultFrag fragment2 = (ResultFrag) fragmentManager
+				.findFragmentById(R.id.resultfragment);
+
+		// Выводим нужную информацию
+		if (fragment2 != null)
+			fragment2.setDescription(buttonIndex);
 	}
 }
