@@ -1,9 +1,13 @@
 package com.sm.fragtest;
 
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -11,7 +15,20 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Button doURL = (Button) findViewById(R.id.doURL);
+		doURL.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				String test = new String("url to display");
+				// Start the DisplayActivity
+				//jaba.loadUrl("file:///android_asset/webcontent/Anaconda.jpg");
+				// startActivity(new Intent(getApplicationContext(), cls)));
+
+			}
+		});
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
