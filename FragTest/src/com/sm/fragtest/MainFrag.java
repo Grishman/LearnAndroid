@@ -46,10 +46,10 @@ Button doURL2 = (Button) view.findViewById(R.id.doURL2);
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		int buttonIndex = translateIdToIndex(v.getId());
-
+       String str = new String("URLURLURL");
 		// Закоментируйте перед проверкой
 		OnSelectedButtonListener listener = (OnSelectedButtonListener) getActivity();
-		listener.onButtonSelected(buttonIndex);
+		listener.doURLMagic(str);
 
 		// Вспомогательный метод для получения индекса нажатой кнопки
 		Toast.makeText(getActivity(), String.valueOf(buttonIndex),

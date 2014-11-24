@@ -21,13 +21,13 @@ public class SecondActivity extends ActionBarActivity {
 		}
 		
 		Intent intent = getIntent();
-		int buttonIndex = intent.getIntExtra("buttonIndex", -1);
-		if (buttonIndex != -1) {
+		String buttonIndex = intent.getStringExtra("str");
+		//if (buttonIndex != -1) {
 			FragmentManager fm = getFragmentManager();
 			ResultFrag fragment2 = (ResultFrag) fm
 					.findFragmentById(R.id.resultfragment);
-			fragment2.setDescription(buttonIndex);
-		}
+			fragment2.setDescriptionURL(buttonIndex);
+		//}
 	}
 
 	@Override

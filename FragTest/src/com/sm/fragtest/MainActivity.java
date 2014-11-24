@@ -61,4 +61,25 @@ public class MainActivity extends ActionBarActivity implements
 			fragment2.setDescription(buttonIndex);
 		}
 	}
+
+	@Override
+	public void doURLMagic(String str) {
+		FragmentManager fragmentManager = getFragmentManager();
+
+		// Получаем ссылку на второй фрагмент по ID
+		ResultFrag fragment2 = (ResultFrag) fragmentManager
+				.findFragmentById(R.id.resultfragment);
+
+		// Выводим нужную информацию
+		if (fragment2 == null || !fragment2.isVisible()) {
+			// запускаем активность
+			Intent intent = new Intent(this, SecondActivity.class);
+			intent.putExtra("str", str);
+			startActivity(intent);
+
+		} else {
+			fragment2.setDescriptionURL(str);
+		}
+		
+	}
 }

@@ -31,4 +31,8 @@ public class ResultFrag extends Fragment {
 		tvInfo.setText(catDescription);
 		
 	}
+	public void setDescriptionURL(String str) {
+		tvInfo.setText(str);
+		
+	}
 }
