@@ -1,8 +1,9 @@
 package com.sm.fragtest;
 
-
 import android.support.v7.app.ActionBarActivity;
 import android.app.FragmentManager;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,15 +11,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity implements OnSelectedButtonListener {
+public class MainActivity extends ActionBarActivity implements
+		OnSelectedButtonListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 	}
-	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,7 +40,6 @@ public class MainActivity extends ActionBarActivity implements OnSelectedButtonL
 		return super.onOptionsItemSelected(item);
 	}
 
-
 	@Override
 	public void onButtonSelected(int buttonIndex) {
 		// TODO Auto-generated method stub
@@ -51,7 +51,14 @@ public class MainActivity extends ActionBarActivity implements OnSelectedButtonL
 				.findFragmentById(R.id.resultfragment);
 
 		// Выводим нужную информацию
-		if (fragment2 != null)
+		if (fragment2 == null || !fragment2.isVisible()) {
+			// запускаем активность
+			Intent intent = new Intent(this, SecondActivity.class);
+			intent.putExtra("buttonIndex", buttonIndex);
+			startActivity(intent);
+
+		} else {
 			fragment2.setDescription(buttonIndex);
+		}
 	}
 }
