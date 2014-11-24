@@ -12,6 +12,11 @@
         <item>Мурзик выписывает Мурзилку</item>
     </string-array>
 
-    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_second">Result Activity</string>
+    <string name="result">Here will be esult text!</string>
+    <string name="countryT">Enter country</string>
+    <string name="sourceT">Enter source</string>
+    <string name="paramsT">Enter parameters</string>
+    <string name="startB">Lets Find!</string>
 
 </resources>
